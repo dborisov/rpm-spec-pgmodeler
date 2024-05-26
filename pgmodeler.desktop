@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=pgModeler
+Type=Application
+MimeType=application/dbm
+Terminal=false
+Icon=pgmodeler
+Exec=pgmodeler

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create Release
         id: create_release
@@ -33,9 +33,9 @@ jobs:
             yum install -y rpmdevtools yum-utils epel-release
             echo "%_topdir /workspace" > ~/.rpmmacros
             rpmdev-setuptree
-            mv pgmodeler.spec /workspace/SPECS/
-            mv pgmodeler.desktop /workspace/SOURCES/
-            mv application-dbm.xml /workspace/SOURCES/
+            mv /workspace/pgmodeler.spec /workspace/SPECS/
+            mv /workspace/pgmodeler.desktop /workspace/SOURCES/
+            mv /workspace/application-dbm.xml /workspace/SOURCES/
             yum-builddep --assumeyes /workspace/SPECS/pgmodeler.spec
             spectool -g -R /workspace/SPECS/pgmodeler.spec
             rpmbuild -ba /workspace/SPECS/pgmodeler.spec
